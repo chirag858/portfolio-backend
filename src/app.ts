@@ -1,4 +1,5 @@
 import express from "express";
+import path from "path";
 import cors from "cors";
 import helmet from "helmet";
 import { env } from "./config/env";
@@ -17,6 +18,15 @@ export const app = express();
 app.use(helmet());
 app.use(cors({ origin: env.corsOrigin }));
 app.use(express.json());
+
+app.use(
+  "/uploads",
+  (_req, res, next) => {
+    res.setHeader("Cross-Origin-Resource-Policy", "cross-origin");
+    next();
+  },
+  express.static(path.join(__dirname, "..", "public", "uploads"))
+);
 
 app.get("/health", (_req, res) => res.json({ status: "ok" }));
 

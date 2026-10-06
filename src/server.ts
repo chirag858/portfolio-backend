@@ -2,14 +2,10 @@ import { app } from "./app";
 import { connectDB } from "./config/db";
 import { env } from "./config/env";
 
-async function main() {
-  await connectDB();
-  app.listen(env.port, () => {
-    console.log(`Server listening on port ${env.port}`);
-  });
-}
+app.listen(env.port, () => {
+  console.log(`Server listening on port ${env.port}`);
+});
 
-main().catch((err) => {
-  console.error("Failed to start server:", err);
-  process.exit(1);
+connectDB().catch((err) => {
+  console.error("MongoDB connection failed (API routes needing the DB will error until it's reachable):", err);
 });
