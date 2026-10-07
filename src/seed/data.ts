@@ -60,7 +60,7 @@ export const projectsSeed = [
     role: "Backend engineer — Code Brew Labs",
     featured: true,
     tech: ["Node.js", "TypeScript", "MongoDB", "MongoDB Aggregation", "REST APIs"],
-    links: { github: "", live: "" },
+    links: { github: "", live: "https://play.google.com/store/apps/details?id=com.portl.fitness&hl=en_IN" },
     overview:
       "Backend services for the Portl Fitness app (featured on Shark Tank): user authentication, workout tracking and analytics, and reporting for the admin team.",
     problem:
