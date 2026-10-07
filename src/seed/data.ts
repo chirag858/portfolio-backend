@@ -119,6 +119,42 @@ export const projectsSeed = [
     outcome: "Significantly faster reporting, a lighter production database, and reliable ingestion of large healthcare datasets.",
     order: 2,
   },
+  {
+    slug: "pandit-ai",
+    name: "Pandit AI",
+    kind: "AI · astrology · backend",
+    status: "production",
+    summary:
+      "App where users call and chat with an AI pandit, with kundali generation via the DivineAPI astrology API. 10K+ downloads on the Play Store.",
+    role: "Backend engineer — Code Brew Labs",
+    featured: true,
+    tech: ["Node.js", "TypeScript", "MongoDB", "DivineAPI", "REST APIs"],
+    links: {
+      github: "",
+      live: "https://play.google.com/store/apps/details?id=com.app.pandit.ai&hl=en_IN",
+    },
+    overview:
+      "An app that lets users call and chat with an AI pandit, with kundali (birth chart) generation powered by DivineAPI's astrology data.",
+    problem:
+      "Kundali generation depends on precise astronomical/astrological calculations that aren't practical to build in-house, so the backend needed to integrate a third-party astrology API reliably and map its output into what the app's call and chat experience needed.",
+    contribution: [
+      "Built backend services in Node.js and TypeScript for the app's call and chat features.",
+      "Integrated the DivineAPI astrology API for kundali (birth chart) generation.",
+    ],
+    challenges: [
+      {
+        title: "Third-party astrology data integration",
+        detail:
+          "Kundali generation required integrating DivineAPI's astrology endpoints and mapping their response data into the format the app's chat and call flows consume.",
+      },
+    ],
+    solution:
+      "A Node.js/TypeScript backend service layer wraps the DivineAPI integration for kundali generation and serves the data to the app's call and chat features.",
+    features: ["AI pandit call and chat", "Kundali (birth chart) generation via DivineAPI"],
+    architecture: ["Mobile client", "REST API — Node.js + TypeScript", "MongoDB", "External — DivineAPI"],
+    outcome: "Live in production on the Play Store with 10K+ downloads.",
+    order: 3,
+  },
 ];
 
 export const experienceSeed = [
