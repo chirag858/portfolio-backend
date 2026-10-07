@@ -3,6 +3,7 @@ import { requireAuth } from "../middleware/auth";
 import { publicWriteLimiter } from "../middleware/rateLimiter";
 import { contactSchema } from "../validators/contact";
 import { ContactSubmission } from "../models/ContactSubmission";
+import { sendContactNotification } from "../config/mailer";
 
 const router = Router();
 
@@ -11,6 +12,10 @@ router.post("/", publicWriteLimiter, async (req, res, next) => {
     const data = contactSchema.parse(req.body);
     const submission = await ContactSubmission.create(data);
     res.status(201).json(submission);
+
+    sendContactNotification(data).catch((err) => {
+      console.error("Failed to send contact notification email:", err);
+    });
   } catch (err) {
     next(err);
   }
