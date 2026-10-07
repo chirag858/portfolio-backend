@@ -8,14 +8,17 @@ export const projectsSeed = [
     kind: "Edtech · full-stack",
     status: "production",
     summary:
-      "Course platform with 50+ REST APIs, Razorpay payments, multi-layer caching and resumable multi-GB video uploads.",
+      "Course platform with 50+ REST APIs, Razorpay payments, multi-layer caching and resumable multi-GB video uploads. 10K+ downloads on the Play Store.",
     role: "Backend engineer — Code Brew Labs",
     featured: true,
     tech: [
       "Node.js", "TypeScript", "MongoDB", "Redis", "Bull", "AWS S3", "S3 Multipart",
       "STS", "Razorpay", "GitHub Actions", "Jest", "React",
     ],
-    links: { github: "", live: "" },
+    links: {
+      github: "",
+      live: "https://play.google.com/store/apps/details?id=com.rahulmalodia&hl=en_IN",
+    },
     overview:
       "A full-stack learning platform where students browse a catalog, buy courses, packages and events, and stream long-form video. Instructors upload content; admins manage catalog, pricing, promos and access.",
     problem:
@@ -48,7 +51,7 @@ export const projectsSeed = [
       "MongoDB (primary data)", "AWS S3 — multipart video storage (presigned URLs + STS)", "External — Razorpay",
     ],
     outcome:
-      "~60% reduction in API latency under high-concurrency traffic. Payment flow (orders, refunds, promos, GST e-invoicing) shipped end to end and running in production.",
+      "~60% reduction in API latency under high-concurrency traffic. Payment flow (orders, refunds, promos, GST e-invoicing) shipped end to end and running in production. The app has 10K+ downloads on the Play Store.",
     order: 0,
   },
   {
